@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Data Engineer</p>
+            <h1>Hi, I'm <span>Adi</span><br>Venkat From USA</h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/my.jpg" alt="Adi Venkat Profile Picture">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm a Data Engineer with over 4 years of experience working with cloud platforms like Azure and AWS.I build data pipelines, automate workflows, and create systems that help teams make better decisions.
+                    I enjoy solving complex data problems and making data easy to use and understand.
+                    
+                    </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li>Data Engineering</li>
+                        <li>Building ETL pipelines</li>
+                        <li>Cloud Data Solutions</li>
+                        <li>Data Warehousing & Modeling</li>
+                        <li>Real-time Data Processing</li>
+                        <li>Automation & Monitoring Workflows</li>
+                        <li>Data Quality & Governance</li>
+                        <li>Data Visualization</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Jul 2023 - Present</span><br>Data Engineer at Capital One</li>
+                        <li><span>Feb 2020 - Aug 2022</span><br>Data Engineer at Elevance Health</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024</span><br>M.S from CSU Northridge,California</li>
+                        <li><span>2020</span><br>B.Tech from SRKR Engg.College,India</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ---------Projects---------------- -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Personal Projects</h1>
+        <div class="services-list">
+            <div class="service-item">
+                <i class="fas fa-database"></i>
+                <h2>YouTube Video Data Pipeline with Airflow</h2>
+                <a href="#" class="see-more">See more</a>
+                <div class="more-info">
+                    <p>The Airflow DAGs are set to run at scheduled intervals, ensuring that fresh data is always available. The system also includes error handling and logging to track the status of each task, ensuring robustness and reliability in the data processing workflow.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cloud"></i>
+                <h2>Real-Time Data Processing with Apache Kafka</h2>
+                <a href="#" class="see-more">See more</a>
+                <div class="more-info">
+                    <p>The solution involves setting up Kafka producers to push data from various sources into Kafka topics. Consumers then read from these topics, process the data, and store it in a data lake for further analytical use. This project optimized data flow for high-velocity data processing.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cogs"></i>
+                <h2>API and SFTP Data Extraction from GitHub</h2>
+                <a href="#" class="see-more">See more</a>
+                <div class="more-info">
+                    <p>The data pipeline involves authenticating to the GitHub API, retrieving repository details such as commit history, issues, and pull requests, and storing this information in a secure format. SFTP ensures safe file transfer, and encryption guarantees that sensitive data is protected during storage and transfer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------Certifications------------ -->
+<div id="certifications">
+    <div class="container">
+        <h1 class="sub-title">Certifications</h1>
+        <div class="certification-list">
+            <div class="certification">
+                <img src="images/Dp-203.jpeg" alt="Microsoft Azure">
+                <div class="layer">
+                    <h3>Microsoft Azure Data Engineer Associate</h3>
+                    <p>Certified in designing, building, and maintaining secure and scalable data solutions using Azure technologies.</p>
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/ADIVENKATRAMINENI-7079/7D47E75C50C8EEA7?sharingId=C972C6D4C664DF13" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="certification">
+                <img src="images/hackerank.png" alt="HackerRank">
+                <div class="layer">
+                    <h3>SQL Advanced - HackerRank</h3>
+                    <p>Demonstrated advanced SQL skills including data modeling, query optimization, and complex joins.</p>
+                    <a href="https://www.hackerrank.com/certificates/d3ed7e1dbf0d" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="certification">
+                <img src="images/Coursera.png" alt="Coursera">
+                <div class="layer">
+                    <h3>Python Data Structures - Coursera</h3>
+                    <p>Gained hands-on experience with Python data structures like lists, dictionaries, and algorithms for real-world applications.</p>
+                    <a href="https://coursera.org/share/ee5363b582771e6efe455264635905eb" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="certification">
+                <img src="images/Coursera.jpeg" alt="Google Cloud">
+                <div class="layer">
+                    <h3>Business Transformation with Google Cloud - Coursera</h3>
+                    <p>Learned to leverage Google Cloud tools for digital transformation and business innovation strategies.</p>
+                    <a href="https://coursera.org/share/be5769eb347e4d1185981b0780482912" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> ramineni316@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i> +1-747-320-7868</p>
+                <div class="social-icons">
+                    <a href="http://linkedin.com/in/ramineni16331" target="_blank"><img src="images/LI.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/Aadi6182831" target="_blank"><img src="images/git.png" alt="GitHub"></a>
+                    <a href="https://discord.gg/HDNfBVn8" target="_blank"><img src="images/Discord.png" alt="Discord"></a>
+                    <a href="https://medium.com/@18b91a04h6" target="_blank"><img src="images/Medium.png" alt="Medium" class="medium"></a>
+                </div>
+               
+                <br><br><br>
+                <a href="images/Resume.pdf" download class="btn btn2 bt3">Download CV</a>
+
+                  
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <br>
+
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Adi Venkat Ramineni.Made with ❤️.All Rights Reserved.</a></p>
+    </div>
+</div>
+
+<script>
+    function showInfo(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function hideInfo(id) {
+        document.getElementById(id).style.display = "none";
+    }
+    
+</script>
+
+
+
+
+<script>
+    function toggleVisibility(id) {
+        const moreInfo = document.getElementById(id);
+        // Toggle the display between 'none' and 'block' when "See more" is clicked
+        if (moreInfo.style.display === 'none') {
+            moreInfo.style.display = 'block';
+        } else {
+            moreInfo.style.display = 'none';
+        }
+    }
+    
+    function showDescription(id) {
+        // Ensure description is visible if hovering over the description box
+        const moreInfo = document.getElementById(id);
+        moreInfo.style.display = 'block';
+    }
+    
+    function hideDescription(id) {
+        // Hide the description when moving away from the description box
+        const moreInfo = document.getElementById(id);
+        moreInfo.style.display = 'none';
+    }
+    
+</script>
+
+
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>

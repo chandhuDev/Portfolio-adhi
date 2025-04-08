@@ -11,13 +11,31 @@ body{
     background: #080808;
     color: #fff;
 }
-#header{
+#header {
     width: 100%;
     height: 100vh;
-    background-image: url(images/Adi_pic.png);
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.header-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.header-image {
+    flex: 1.5;
+    background-image: url(images/Adi_pic.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 .container{
     padding: 10px 10%;
@@ -150,42 +168,51 @@ nav ul li a:hover::after{
     grid-gap: 40px;
     margin-top: 50px;
 }
-.services-list div {
+
+.service-item {
     background: #262626;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
-    height: fit-content; /* Important: Make height adjustable */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
 }
-.services-list div i {
+
+.service-item i {
     font-size: 50px;
     margin-bottom: 30px;
 }
-.services-list div h2 {
+
+.service-item h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 5px;
 }
-.services-list div a {
+
+.service-item a {
     text-decoration: none;
     color: #fff;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
 }
-.services-list div:hover {
+
+.service-item:hover {
     background: #ff004f;
-    transform: translateY(-10px);
+    transition-duration: 400ms;
+    height: auto;
 }
-/* Push the "See more" link to the bottom */
+
 .service-item a.see-more {
-    margin-top: 5px;
-  }
-  
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 .more-info {
-    background-color: #1c1c1c;
     padding: 10px;
     margin-top: 15px;
     border-left: 3px solid #ff004f;
@@ -193,16 +220,18 @@ nav ul li a:hover::after{
     font-size: 14px;
     line-height: 1.5;
     transition: all 0.3s ease-in-out;
-    display: none;
 }
-.service-item {
-    min-height: 350px; /* Set minimum height to ensure equal heights */
-    display: flex;
-    flex-direction: column;
-  }
-  
+
+.more-info:hover {
+    background-color: #1c1c1c;
+}
+
+.service-item .more-info {
+    display: none !important;
+}
+
 .service-item:hover .more-info {
-    display: block;
+    display: block !important;
 }
 
 /* -------certifications----------- */
@@ -513,5 +542,3 @@ nav .fas{
     margin-top: -40px;
     display: block;
 }
-
-

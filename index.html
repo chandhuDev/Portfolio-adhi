@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <title>Adi Venkat</title>
+    <meta property="og:title" content="Adi Venkat" />
+    <meta name="description" content="Adi Venkat Portfolio" />
+    <meta property="og:description" content="Adi Venkat Portfolio" />
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-            <p>Data Engineer</p>
-            <h1>Hi, I'm <span>Adi</span><br>Venkat From USA</h1>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#certifications">Services</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-content">
+                <div class="header-text">
+                    <p>Data Engineer</p>
+                    <h1>Hi, I'm <span>Adi</span><br>Venkat From USA</h1>
+                </div>
+                <div class="header-image"></div>
+            </div>
         </div>
     </div>
-</div>
 <!-- -----------about---------- -->
 <div id="about">
     <div class="container">
@@ -215,30 +221,7 @@
 
 
 
-<script>
-    function toggleVisibility(id) {
-        const moreInfo = document.getElementById(id);
-        // Toggle the display between 'none' and 'block' when "See more" is clicked
-        if (moreInfo.style.display === 'none') {
-            moreInfo.style.display = 'block';
-        } else {
-            moreInfo.style.display = 'none';
-        }
-    }
-    
-    function showDescription(id) {
-        // Ensure description is visible if hovering over the description box
-        const moreInfo = document.getElementById(id);
-        moreInfo.style.display = 'block';
-    }
-    
-    function hideDescription(id) {
-        // Hide the description when moving away from the description box
-        const moreInfo = document.getElementById(id);
-        moreInfo.style.display = 'none';
-    }
-    
-</script>
+
 
 
 
@@ -254,23 +237,38 @@
     }
 
 </script>
-<script>
-    const scriptURL = '< add you own link here >' // add your own app script link here
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY");
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                from_name: name,
+                from_email: email,
+                message: message
+            })
+            .then(function(response) {
+                document.getElementById('msg').innerHTML = "Message sent successfully!";
+                document.getElementById('contact-form').reset();
+                setTimeout(function() {
+                    document.getElementById('msg').innerHTML = "";
+                }, 5000);
+            })
+            .catch(function(error) {
+                document.getElementById('msg').innerHTML = "Failed to send message. Please try again.";
+                console.error("Error sending email:", error);
+            });
+        });
+    })();
+</script>
 </body>
 </html>
